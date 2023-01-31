@@ -1,4 +1,4 @@
-export const renderToDom = (selectId, taco) => {
+export const renderToDom = (selectId, html) => {
 const divId = document.querySelector(selectId);
-divId.innerHTML = taco;
+divId.innerHTML = html;
 };

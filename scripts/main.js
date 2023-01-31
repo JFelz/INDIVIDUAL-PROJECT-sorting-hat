@@ -1,6 +1,12 @@
-import { renderToDom } from "../utils/renderToDom.js";
+import { renderToDo } from "../utils/renderToDom.js";
+import { GoTclasses } from "../data/classes.js";
 
-renderToDom();
+const renderToDom = (selectId, html) => {
+  const divId = document.querySelector(selectId);
+  divId.innerHTML = html;
+  };
+
+renderToDom(".here", GoTclasses.name);
 
 //input button that creates a new array with user info
 
