@@ -2,7 +2,7 @@ export const GoTclasses = [
 {
 id: 1,
 name: btnName.value,
-faction: Lannister,
+faction: "Lannister",
 class: "Assassin",
 weapon: "Dual Daggers",
 specialAbility: "Everybody can see you when in stealth",
@@ -11,7 +11,7 @@ imgUrl: "https://i.pinimg.com/originals/9a/a1/5a/9aa15a290659bcd4aa213fdefd9d47a
 {
 id: 2,
 name: btnName.value,
-faction: Lannister,
+faction: "Lannister",
 class: "Knight",
 weapon: "Dual-Handed GreatSword",
 specAbility: "You struggle to carry your sword.",
@@ -257,7 +257,8 @@ name: btnName.value,
 faction: Greyjoy,
 class: "Assassin",
 weapon: "Dual Daggers",
-specialAbility: "Everybody can see you when in stealth"
+specialAbility: "Everybody can see you when in stealth",
+imgUrl: "https://i.pinimg.com/originals/9a/a1/5a/9aa15a290659bcd4aa213fdefd9d47a3.jpg"
 },
 {
 id: 30,
@@ -265,7 +266,8 @@ name: btnName.value,
 faction: Greyjoy,
 class: "Knight",
 weapon: "Dual-Handed GreatSword",
-specAbility: "You struggle to carry your sword."
+specAbility: "You struggle to carry your sword.",
+imgUrl: "https://i.pinimg.com/564x/ac/0a/ce/ac0acee0c2863ff70a4b21cb74281d38.jpg"
 },
 {
 id: 31,
@@ -273,7 +275,8 @@ name: btnName.value,
 faction: Greyjoy,
 class: "Sorcerer",
 weapon: "Power-wielding hands",
-specAbility: "Everytime you cast a spell you hurt your health."
+specAbility: "Everytime you cast a spell you hurt your health.",
+imgUrl: "https://cdna.artstation.com/p/assets/images/images/011/575/376/large/zhu-liu-0629.jpg?1530280138"
 },
 {
 id: 32,
@@ -281,7 +284,8 @@ name: btnName.value,
 faction: Greyjoy,
 class: "Archer",
 weapon: "Greatbow",
-specAbility: "Your aim is better when you're drunk."
+specAbility: "Your aim is better when you're drunk.",
+imgUrl: "https://i.pinimg.com/originals/45/1d/8f/451d8fdb7ec8ae87e46d05b3356d399e.jpg"
 },
 {
 id: 33,
@@ -289,7 +293,8 @@ name: btnName.value,
 faction: Greyjoy,
 class: "Bard",
 weapon: "A Mandolin and a cup of Mead",
-specAbility: "Really good at pissing people off."
+specAbility: "Really good at pissing people off.",
+imgUrl: "https://static.wikia.nocookie.net/witcher/images/2/2c/Gwent_cardart_scoiatael_eldain.png/revision/latest?cb=20181022104739"
 },
 {
 id: 34,
@@ -297,7 +302,8 @@ name: btnName.value,
 faction: Greyjoy,
 class: "Infantry",
 weapon: "Sword and Shield",
-specAbility: "Most likely to die first."
+specAbility: "Most likely to die first.",
+imgUrl: "https://cdnb.artstation.com/p/assets/images/images/007/853/071/large/alex-vasin-2view.jpg?1508936330"
 },
 {
 id: 35,
@@ -305,7 +311,8 @@ name: btnName.value,
 faction: Greyjoy,
 class: "Scholar",
 weapon: "Scrolls and Books",
-specAbility: "You're blind: You can only read books and scrolls in braille."
+specAbility: "You're blind: You can only read books and scrolls in braille.",
+imgUrl: "https://static.wikia.nocookie.net/oustomiaworld/images/0/0c/Claus.jpeg/revision/latest?cb=20161210114955"
 },
 {
 id: 36,
@@ -313,7 +320,8 @@ name: btnName.value,
 faction: Hightower,
 class: "Assassin",
 weapon: "Dual Daggers",
-specialAbility: "Everybody can see you when in stealth"
+specialAbility: "Everybody can see you when in stealth",
+imgUrl: "https://i.pinimg.com/originals/9a/a1/5a/9aa15a290659bcd4aa213fdefd9d47a3.jpg"
 },
 {
 id: 37,
@@ -321,7 +329,8 @@ name: btnName.value,
 faction: Hightower,
 class: "Knight",
 weapon: "Dual-Handed GreatSword",
-specAbility: "You struggle to carry your sword."
+specAbility: "You struggle to carry your sword.",
+imgUrl: "https://i.pinimg.com/564x/ac/0a/ce/ac0acee0c2863ff70a4b21cb74281d38.jpg"
 },
 {
 id: 38,
@@ -329,7 +338,8 @@ name: btnName.value,
 faction: Hightower,
 class: "Sorcerer",
 weapon: "Power-wielding hands",
-specAbility: "Everytime you cast a spell you hurt your health."
+specAbility: "Everytime you cast a spell you hurt your health.",
+imgUrl: "https://cdna.artstation.com/p/assets/images/images/011/575/376/large/zhu-liu-0629.jpg?1530280138"
 },
 {
 id: 39,
@@ -337,7 +347,8 @@ name: btnName.value,
 faction: Hightower,
 class: "Archer",
 weapon: "Greatbow",
-specAbility: "Your aim is better when you're drunk."
+specAbility: "Your aim is better when you're drunk.",
+imgUrl: "https://i.pinimg.com/originals/45/1d/8f/451d8fdb7ec8ae87e46d05b3356d399e.jpg"
 },
 {
 id: 40,
@@ -345,7 +356,8 @@ name: btnName.value,
 faction: Hightower,
 class: "Bard",
 weapon: "A Mandolin and a cup of Mead",
-specAbility: "Really good at pissing people off."
+specAbility: "Really good at pissing people off.",
+imgUrl: "https://static.wikia.nocookie.net/witcher/images/2/2c/Gwent_cardart_scoiatael_eldain.png/revision/latest?cb=20181022104739"
 },
 {
 id: 41,
@@ -353,7 +365,8 @@ name: btnName.value,
 faction: Hightower,
 class: "Infantry",
 weapon: "Sword and Shield",
-specAbility: "Most likely to die first."
+specAbility: "Most likely to die first.",
+imgUrl: "https://cdnb.artstation.com/p/assets/images/images/007/853/071/large/alex-vasin-2view.jpg?1508936330"
 },
 {
 id: 42,
@@ -361,6 +374,7 @@ name: btnName.value,
 faction: Hightower,
 class: "Scholar",
 weapon: "Scrolls and Books",
-specAbility: "You're blind: You can only read books and scrolls in braille."
+specAbility: "You're blind: You can only read books and scrolls in braille.",
+imgUrl: "https://static.wikia.nocookie.net/oustomiaworld/images/0/0c/Claus.jpeg/revision/latest?cb=20161210114955"
 },
 ];

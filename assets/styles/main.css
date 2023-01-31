@@ -11,3 +11,7 @@
   flex-direction: row;
   width: 50%;
 }
+.blue-card {
+  display: flex;
+  flex-wrap: wrap;
+}
