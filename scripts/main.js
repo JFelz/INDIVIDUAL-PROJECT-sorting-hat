@@ -8,8 +8,13 @@ import { CardsOnDom } from "../components/card.js";
 
 //input button that creates a new array with user info
 
-const createMember = () =>{
-const btnName = document.querySelector("#Name");
+// const createMember = () =>{
+// const btnName = document.querySelector("#Name");
+
+// const newMember = {
+// id: 1,
+// name: btnName.value,
+// }
 
 
 
@@ -27,6 +32,7 @@ renderToDom(".blue-card", refCards);
 
 }
 
+renderCards(GoTclasses);
 
 //create form
 //1.) target user input box and store info
