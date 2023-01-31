@@ -11,11 +11,6 @@ import { CardsOnDom } from "../components/card.js";
 const createMember = () =>{
 const btnName = document.querySelector("#Name");
 
-const newMember = {
-id: 1,
-name: btnName.value,
-}
-}
 
 
 
