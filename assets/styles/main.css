@@ -11,3 +11,10 @@
   flex-direction: row;
   width: 50%;
 }
+.blue-card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 25%;
+  background-color: aquamarine;
+}
