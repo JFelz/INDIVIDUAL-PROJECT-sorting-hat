@@ -410,7 +410,7 @@ const CardsOnDom = (GoTclasses) => {
   for (const persona of GoTclasses) {
     domString += 
 
-  `<div class="card" style="width: 18rem;">
+  `<div class="card" style="max-width: 33%;">
   <img src="${persona.imgUrl}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${persona.faction}</h5>
@@ -426,7 +426,7 @@ const CardsOnDom = (GoTclasses) => {
   renderToDom('.container-1', domString);
 }
 
-// CardsOnDom(GoTclasses);
+
   
 //target the buttons on the HTML
 
@@ -436,7 +436,7 @@ const btn_B = document.querySelector(".btn-Barath");
 const btn_S = document.querySelector(".btn-Stark");
 const btn_G = document.querySelector(".btn-Grey");
 const btn_H = document.querySelector(".btn-High");
-
+const btn_All = document.querySelector(".btn-all");
 
 //Selecting specific factions for filtering
 let arrLann = [];
@@ -504,6 +504,9 @@ btn_G.addEventListener('click', () => {
 })
 btn_H.addEventListener('click', () => {
   CardsOnDom(arrHigh);
+})
+btn_All.addEventListener('click', () => {
+  CardsOnDom(GoTclasses);
 })
 
 
