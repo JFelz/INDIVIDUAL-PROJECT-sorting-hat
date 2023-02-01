@@ -1,3 +1,4 @@
+
 const GoTclasses = [
   {
   id: 1,
@@ -91,7 +92,7 @@ const GoTclasses = [
   },
   {
   id: 11,
-  name: btnName.value,
+  name: "Herod",
   faction: "Stark",
   class: "Archer",
   weapon: "Greatbow",
@@ -376,7 +377,7 @@ const GoTclasses = [
   weapon: "Scrolls and Books",
   specAbility: "You're blind: You can only read books and scrolls in braille.",
   imgUrl: "https://static.wikia.nocookie.net/oustomiaworld/images/0/0c/Claus.jpeg/revision/latest?cb=20161210114955"
-  },
+  }
   ];
   
 
@@ -384,21 +385,20 @@ const GoTclasses = [
 
 
 
-const renderToDom = (selectId, html) => {
+  const renderToDom = (selectId, renderToHtml) => {
   const divId = document.querySelector(selectId);
-  divId.innerHTML = html;
+  divId.innerHTML = renderToHtml;
   };
+
+
+
+//create form
+//1.) target user input box and store info
+
 
 //input button that creates a new array with user info
 
-// const createMember = () =>{
-// const btnName = document.querySelector("#Name");
-
-// const newMember = {
-// id: 1,
-// name: btnName.value,
-// }
-
+//test for DOM
 
 
 
@@ -413,20 +413,92 @@ const CardsOnDom = (GoTclasses) => {
   `<div class="card" style="width: 18rem;">
   <img src="${persona.imgUrl}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">${persona.name}</p>
-    <p class="card-text">${persona.faction}</p>
-    <p class="card-text">${persona.class}</p>
-    <p class="card-text">${persona.weapon}</p>
-    <p class="card-text">${persona.specAbility}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">${persona.faction}</h5>
+    <p class="card-text"><b>Name</b>: ${persona.name}</p>
+    <p class="card-text"><b>Class</b>: ${persona.class}</p>
+    <p class="card-text"><b>Weapon</b>: ${persona.weapon}</p>
+    <p class="card-text"><b>Special Ability</b>: ${persona.specAbility}</p>
+    <a href="#" class="btn btn-danger">Send to the Wall</a>
   </div>
   </div>`
-  }
-  
-  renderToDom(".blue-card", domString);
-  
   };
+  
+  renderToDom('#container', domString);
+}
 
-//create form
-//1.) target user input box and store info
+CardsOnDom(GoTclasses);
+  
+//target the buttons on the HTML
+
+const btn_L = document.querySelector(".btn-Lann");
+const btn_T = document.querySelector(".btn-Targ");
+const btn_B = document.querySelector(".btn-Barath");
+const btn_S = document.querySelector(".btn-Stark");
+const btn_G = document.querySelector(".btn-Grey");
+const btn_H = document.querySelector(".btn-High");
+
+let arrLann = [];
+for (i = 0; i < GoTclasses.length; i++){
+  if (GoTclasses[i].faction === "Lannister"){
+    arrLann.push(GoTclasses[i]);
+  }
+};
+
+let arrTarg = [];
+for (i =0; i < GoTclasses.length; i++){
+  if(GoTclasses[i].faction === "Targaryen"){
+    arrTarg.push(GoTclasses[i]);
+  }
+};
+
+let arrBarath = [];
+for (i = 0; i < GoTclasses.length; i++){
+  if (GoTclasses[i].faction === "Baratheon"){
+    arrBarath.push(GoTclasses[i]);
+  }
+};
+
+let arrStark = [];
+for (i = 0; i < GoTclasses.length; i++){
+  if (GoTclasses[i].faction === "Stark"){
+    arrStark.push(GoTclasses[i]);
+  }
+};
+
+let arrGrey = [];
+for (i = 0; i < GoTclasses.length; i++){
+if (GoTclasses[i].faction === "Greyjoy"){
+  arrGrey.push(GoTclasses[i]);
+}
+};
+
+let arrHigh = [];
+for (i = 0; i < GoTclasses.length; i++){
+  if (GoTclasses[i].faction === "Hightower"){
+    arrHigh.push(GoTclasses[i]);
+  }
+}
+
+btn_L.addEventListener('click', () => {
+  console.log("Hello");
+  CardsOnDom(arrLann);
+});
+
+btn_T.addEventListener("click", () => {
+  console.log("Targ");
+  CardsOnDom(arrTarg);
+})
+
+btn_B.addEventListener('click', () => {
+  CardsOnDom(arrBarath);
+})
+
+btn_S.addEventListener('click', () => {
+  CardsOnDom(arrStark);
+})
+btn_G.addEventListener('click', () => {
+  CardsOnDom(arrGrey);
+})
+btn_H.addEventListener('click', () => {
+  CardsOnDom(arrHigh);
+})
