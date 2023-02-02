@@ -381,7 +381,9 @@ const GoTclasses = [
   ];
   
 
+  
 
+  
 
 
 
@@ -428,6 +430,28 @@ const CardsOnDom = (GoTclasses) => {
 
 
   
+  //Grabs Name input forms
+  const sortButtons = document.querySelector(".SortButton");
+  const userInput = document.querySelector("#UserName");
+  const stateName = document.querySelector(".StateYourName");
+
+
+   const hideInputBtns = () => {
+    sortButtons.hidden = true;
+    userInput.hidden = true;
+    stateName.hidden = true;
+   };
+ 
+  hideInputBtns();
+
+  const showInputBtns = () => {
+    sortButtons.hidden = false;
+    userInput.hidden = false;
+    stateName.hidden = false;
+   };
+
+  
+
 //target the buttons on the HTML
 
 const btn_L = document.querySelector(".btn-Lann");
@@ -437,6 +461,36 @@ const btn_S = document.querySelector(".btn-Stark");
 const btn_G = document.querySelector(".btn-Grey");
 const btn_H = document.querySelector(".btn-High");
 const btn_All = document.querySelector(".btn-all");
+
+
+//hide and show buttons
+
+const hideFilterBtns = () => {
+let filtBtns = [];
+filtBtns.push(btn_T, btn_S, btn_L, btn_H, btn_G, btn_B, btn_All);
+
+for (i in filtBtns){
+  filtBtns[i].hidden = true;
+}}; 
+
+hideFilterBtns();
+
+
+const showFilterBtns = () => {
+  let filtBtns = [];
+  filtBtns.push(btn_T, btn_S, btn_L, btn_H, btn_G, btn_B, btn_All);
+  
+  for (i in filtBtns){
+    filtBtns[i].hidden = false;
+  }};
+
+//show upon click
+const showBtn = document.querySelector(".Show");
+showBtn.addEventListener('click', () =>{
+  showInputBtns();
+  showFilterBtns();
+})
+
 
 //Selecting specific factions for filtering
 let arrLann = [];
@@ -510,8 +564,44 @@ btn_All.addEventListener('click', () => {
 })
 
 
+
+
+
+
+
+
+
+
+
+//On startup, make div hidden to equal true But on click, set it to false.
+
+//Hide and Show div
+
+//Input Name
+
+//Randomizer comes first (Sort)
+
+//grabs user info and makes a new card
+
+// const name = document.querySelector("#Username");
+
+// const newMember() => {
+
+// name: name.value;
+// faction: ,
+// class: ,
+// weapon: ,
+// specAbility: ,
+// imgUrl: 
+// }
+
+
+
+
+
+
 //to move cards to another box, just render to Dom to that target class for that div box
 
 /* Don't show any cards from Array. 
-When user inputs, randomize through loop and give user random card that will display.
+When user inputs, randomize through loop in array and give user random card that will display. Original array should NOT display on DOM.
 Only difference is the name will be different based on user input*/
