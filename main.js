@@ -493,10 +493,18 @@ GoTclasses[i].name = inputName.value;
 
 console.log(GoTclasses[i]);
 
+let specCardonDOM = [];
+specCardonDOM.push(GoTclasses[i]);
 
+CardsOnDom(specCardonDOM);
 
 }; 
 
+}};
+
+
+// CardsOnDom(specCardonDOM);
+// console.log(specCardonDOM);
 
 // const newRecruit = {
 
@@ -521,7 +529,7 @@ console.log(GoTclasses[i]);
 
 // console.log(GoTclasses);
 
-}};
+
 
 
 
