@@ -394,18 +394,6 @@ const GoTclasses = [
 
 
 
-//create form
-//1.) target user input box and store info
-
-
-//input button that creates a new array with user info
-
-//test for DOM
-
-
-
-//display user info on card and place it in respective order.
-
 const CardsOnDom = (GoTclasses) => {
   let domString = "";
   
@@ -490,6 +478,73 @@ showBtn.addEventListener('click', () =>{
   showInputBtns();
   showFilterBtns();
 })
+
+const createMember = () => {
+
+const inputName = document.querySelector("#UserName");
+
+const randNum = Math.floor(Math.random() * 43);
+console.log(randNum);
+
+for (i = 0; i < GoTclasses.length; i++){
+if (randNum === GoTclasses[i].id){
+
+GoTclasses[i].name = inputName.value;
+
+console.log(GoTclasses[i]);
+
+let specCardonDOM = [];
+specCardonDOM.push(GoTclasses[i]);
+
+CardsOnDom(specCardonDOM);
+
+}; 
+
+}};
+
+
+// CardsOnDom(specCardonDOM);
+// console.log(specCardonDOM);
+
+// const newRecruit = {
+
+//     id: 0,
+//     name: inputName.value,
+//     faction: "Lannister",
+//     class: "text",
+//     weapon: "text",
+//     specAbility: "text",
+//     imgUrl: "text"
+  
+// }
+
+// return newRecruit;
+
+
+// console.log("New Member:", newRecruit)
+
+// GoTclasses.push(newRecruit);
+
+// CardsOnDom(GoTclasses);
+
+// console.log(GoTclasses);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const sortBtn = document.querySelector(".SortButton");
+sortBtn.addEventListener('click', createMember);
+
 
 
 //Selecting specific factions for filtering
