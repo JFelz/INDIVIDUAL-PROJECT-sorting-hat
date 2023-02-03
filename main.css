@@ -24,6 +24,11 @@ body {
   width: 48%;
   margin-top: 100px; 
 }
+.btnD {
+  border-radius: 20px;
+  background-color: rgb(196, 19, 19);
+}
+
 #filterButtons {
   display: flex;
   flex-wrap: wrap;

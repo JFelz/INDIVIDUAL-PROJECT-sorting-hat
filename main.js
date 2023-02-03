@@ -408,7 +408,7 @@ const CardsOnDom = (GoTclasses) => {
     <p class="card-text"><b>Class</b>: ${persona.class}</p>
     <p class="card-text"><b>Weapon</b>: ${persona.weapon}</p>
     <p class="card-text"><b>Special Ability</b>: ${persona.specAbility}</p>
-    <a href="#" class="btn btn-danger">Send to the Wall</a>
+    <a href="#" class="btnD">Send to the Wall</a>
   </div>
   </div>`
   };
@@ -500,7 +500,18 @@ CardsOnDom(specCardonDOM);
 
 }; 
 
+
+
+
 }};
+
+
+
+
+
+
+
+
 
 
 // CardsOnDom(specCardonDOM);
@@ -592,12 +603,10 @@ for (i = 0; i < GoTclasses.length; i++){
 
 //Once button clicked, DOM shows that filtered array
 btn_L.addEventListener('click', () => {
-  console.log("Hello");
   CardsOnDom(arrLann);
 });
 
 btn_T.addEventListener("click", () => {
-  console.log("Targ");
   CardsOnDom(arrTarg);
 })
 
@@ -641,22 +650,3 @@ btn_All.addEventListener('click', () => {
 // const name = document.querySelector("#Username");
 
 // const newMember() => {
-
-// name: name.value;
-// faction: ,
-// class: ,
-// weapon: ,
-// specAbility: ,
-// imgUrl: 
-// }
-
-
-
-
-
-
-//to move cards to another box, just render to Dom to that target class for that div box
-
-/* Don't show any cards from Array. 
-When user inputs, randomize through loop in array and give user random card that will display. Original array should NOT display on DOM.
-Only difference is the name will be different based on user input*/
