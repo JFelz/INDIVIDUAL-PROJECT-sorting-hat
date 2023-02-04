@@ -380,13 +380,6 @@ const GoTclasses = [
   }
   ];
   
-
-  
-
-  
-
-
-
   const renderToDom = (selectId, renderToHtml) => {
   const divId = document.querySelector(selectId);
   divId.innerHTML = renderToHtml;
@@ -394,10 +387,10 @@ const GoTclasses = [
 
 
 
-const CardsOnDom = (GoTclasses) => {
+const CardsOnDom = (taco) => {
   let domString = "";
   
-  for (const persona of GoTclasses) {
+  for (const persona of taco) {
     domString += 
 
   `<div class="card" style="max-width: 33%;">
@@ -479,6 +472,15 @@ showBtn.addEventListener('click', () =>{
   showFilterBtns();
 })
 
+let specCardonDOM = [];
+let arrStark = [];
+let arrLann = [];
+let arrTarg = [];
+let arrBarath = [];
+let arrGrey = [];
+let arrHigh = [];
+
+
 const createMember = () => {
 
 const inputName = document.querySelector("#UserName");
@@ -493,62 +495,40 @@ GoTclasses[i].name = inputName.value;
 
 console.log(GoTclasses[i]);
 
-let specCardonDOM = [];
 specCardonDOM.push(GoTclasses[i]);
+console.log(specCardonDOM);
 
 CardsOnDom(specCardonDOM);
 
-}; 
+if (GoTclasses[i].faction === "Stark") {
+  console.log("STARK FILTER");
+  arrStark.push(GoTclasses[i]);
+}
+if (GoTclasses[i].faction === "Lannister") {
+  console.log("Lannister FILTER");
+  arrLann.push(GoTclasses[i]);
+}
+if (GoTclasses[i].faction === "Targaryen") {
+  console.log("TARG FILTER");
+  arrTarg.push(GoTclasses[i]);
+}
+if (GoTclasses[i].faction === "Baratheon") {
+  console.log("BARATH FILTER");
+  arrBarath.push(GoTclasses[i]);
+}
+if (GoTclasses[i].faction === "Greyjoy") {
+  console.log("Greyjoy FILTER");
+  arrGrey.push(GoTclasses[i]);
+}
+if (GoTclasses[i].faction === "Hightower") {
+  console.log("HIGHTOWER FILTER");
+  arrHigh.push(GoTclasses[i]);
+}
+};
+}}; 
 
-
-
-
-}};
-
-
-
-
-
-
-
-
-
-
-// CardsOnDom(specCardonDOM);
-// console.log(specCardonDOM);
-
-// const newRecruit = {
-
-//     id: 0,
-//     name: inputName.value,
-//     faction: "Lannister",
-//     class: "text",
-//     weapon: "text",
-//     specAbility: "text",
-//     imgUrl: "text"
-  
-// }
-
-// return newRecruit;
-
-
-// console.log("New Member:", newRecruit)
-
-// GoTclasses.push(newRecruit);
-
-// CardsOnDom(GoTclasses);
-
-// console.log(GoTclasses);
-
-
-
-
-
-
-
-
-
-
+console.log(specCardonDOM);
+console.log(arrStark);
 
 
 
@@ -556,50 +536,6 @@ CardsOnDom(specCardonDOM);
 const sortBtn = document.querySelector(".SortButton");
 sortBtn.addEventListener('click', createMember);
 
-
-
-//Selecting specific factions for filtering
-let arrLann = [];
-for (i = 0; i < GoTclasses.length; i++){
-  if (GoTclasses[i].faction === "Lannister"){
-    arrLann.push(GoTclasses[i]);
-  }
-};
-
-let arrTarg = [];
-for (i =0; i < GoTclasses.length; i++){
-  if(GoTclasses[i].faction === "Targaryen"){
-    arrTarg.push(GoTclasses[i]);
-  }
-};
-
-let arrBarath = [];
-for (i = 0; i < GoTclasses.length; i++){
-  if (GoTclasses[i].faction === "Baratheon"){
-    arrBarath.push(GoTclasses[i]);
-  }
-};
-
-let arrStark = [];
-for (i = 0; i < GoTclasses.length; i++){
-  if (GoTclasses[i].faction === "Stark"){
-    arrStark.push(GoTclasses[i]);
-  }
-};
-
-let arrGrey = [];
-for (i = 0; i < GoTclasses.length; i++){
-if (GoTclasses[i].faction === "Greyjoy"){
-  arrGrey.push(GoTclasses[i]);
-}
-};
-
-let arrHigh = [];
-for (i = 0; i < GoTclasses.length; i++){
-  if (GoTclasses[i].faction === "Hightower"){
-    arrHigh.push(GoTclasses[i]);
-  }
-}
 
 //Once button clicked, DOM shows that filtered array
 btn_L.addEventListener('click', () => {
@@ -624,29 +560,5 @@ btn_H.addEventListener('click', () => {
   CardsOnDom(arrHigh);
 })
 btn_All.addEventListener('click', () => {
-  CardsOnDom(GoTclasses);
+  CardsOnDom(specCardonDOM);
 })
-
-
-
-
-
-
-
-
-
-
-
-//On startup, make div hidden to equal true But on click, set it to false.
-
-//Hide and Show div
-
-//Input Name
-
-//Randomizer comes first (Sort)
-
-//grabs user info and makes a new card
-
-// const name = document.querySelector("#Username");
-
-// const newMember() => {
