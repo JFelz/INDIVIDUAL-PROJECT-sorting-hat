@@ -380,13 +380,6 @@ const GoTclasses = [
   }
   ];
   
-
-  
-
-  
-
-
-
   const renderToDom = (selectId, renderToHtml) => {
   const divId = document.querySelector(selectId);
   divId.innerHTML = renderToHtml;
@@ -394,10 +387,10 @@ const GoTclasses = [
 
 
 
-const CardsOnDom = (GoTclasses) => {
+const CardsOnDom = (taco) => {
   let domString = "";
   
-  for (const persona of GoTclasses) {
+  for (const persona of taco) {
     domString += 
 
   `<div class="card" style="max-width: 33%;">
@@ -408,18 +401,73 @@ const CardsOnDom = (GoTclasses) => {
     <p class="card-text"><b>Class</b>: ${persona.class}</p>
     <p class="card-text"><b>Weapon</b>: ${persona.weapon}</p>
     <p class="card-text"><b>Special Ability</b>: ${persona.specAbility}</p>
-    <a href="#" class="btn btn-danger">Send to the Wall</a>
+    <button id="wallBtn--${persona.id}" class="btn btn-danger">Send to the Wall</button>
   </div>
   </div>`
   };
   
   renderToDom('.container-1', domString);
-}
+
+document.querySelector(".container-1").addEventListener('click', sendToWall);
+
+};
+
+
+
+const exiledCardsOnDom = (wall) => {
+  let domString = "";
+  
+  for (const brick of wall) {
+    domString += 
+
+  `<div class="card" style="max-width: 33%;">
+  <img src="${brick.imgUrl}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${brick.faction}</h5>
+    <p class="card-text"><b>Name</b>: ${brick.name}</p>
+    <p class="card-text"><b>Class</b>: ${brick.class}</p>
+    <p class="card-text"><b>Weapon</b>: ${brick.weapon}</p>
+    <p class="card-text"><b>Special Ability</b>: ${brick.specAbility}</p>
+  </div>
+  </div>`
+  };
+  
+  renderToDom('.container-2', domString);
+
+};
+
+theWall = [];
+
+const sendToWall = (event) => {
+if (event.target.id.includes("wallBtn")){
+  const [, personaId] = event.target.id.split("--");
+
+  console.log("Object id: " + personaId);
+
+ 
+ const personaIndex = specCardonDOM.findIndex((item) => Number(personaId) === item.id);
+  
+
+  const exiledPersona = specCardonDOM.splice(personaIndex, 1);
+  console.log(specCardonDOM.item);
+  theWall.push(exiledPersona);
+
+ 
+  
+};
+exiledCardsOnDom(theWall);
+console.log(theWall);
+CardsOnDom(specCardonDOM);
+};
+
+
+
 
 
   
   //Grabs Name input forms
-  const sortButtons = document.querySelector(".SortButton");
+  const sortButtons = document.querySelector(".SortButton")
+ 
   const userInput = document.querySelector("#UserName");
   const stateName = document.querySelector(".StateYourName");
 
@@ -479,65 +527,66 @@ showBtn.addEventListener('click', () =>{
   showFilterBtns();
 })
 
+let specCardonDOM = [];
+let arrStark = [];
+let arrLann = [];
+let arrTarg = [];
+let arrBarath = [];
+let arrGrey = [];
+let arrHigh = [];
+
+
 const createMember = () => {
 
-const inputName = document.querySelector("#UserName");
+const inputName = document.querySelector("#UserName")
 
 const randNum = Math.floor(Math.random() * 43);
 console.log(randNum);
 
 for (i = 0; i < GoTclasses.length; i++){
-if (randNum === GoTclasses[i].id){
+if (randNum === Number(GoTclasses[i].id)){
 
 GoTclasses[i].name = inputName.value;
 
 console.log(GoTclasses[i]);
 
-let specCardonDOM = [];
 specCardonDOM.push(GoTclasses[i]);
+console.log(specCardonDOM);
+
+
+
 
 CardsOnDom(specCardonDOM);
 
-}; 
+if (GoTclasses[i].faction === "Stark") {
+  console.log("STARK FILTER");
+  arrStark.push(GoTclasses[i]);
+}
+if (GoTclasses[i].faction === "Lannister") {
+  console.log("Lannister FILTER");
+  arrLann.push(GoTclasses[i]);
+}
+if (GoTclasses[i].faction === "Targaryen") {
+  console.log("TARG FILTER");
+  arrTarg.push(GoTclasses[i]);
+}
+if (GoTclasses[i].faction === "Baratheon") {
+  console.log("BARATH FILTER");
+  arrBarath.push(GoTclasses[i]);
+}
+if (GoTclasses[i].faction === "Greyjoy") {
+  console.log("Greyjoy FILTER");
+  arrGrey.push(GoTclasses[i]);
+}
+if (GoTclasses[i].faction === "Hightower") {
+  console.log("HIGHTOWER FILTER");
+  arrHigh.push(GoTclasses[i]);
+}
+};
+}}; 
 
-}};
-
-
-// CardsOnDom(specCardonDOM);
-// console.log(specCardonDOM);
-
-// const newRecruit = {
-
-//     id: 0,
-//     name: inputName.value,
-//     faction: "Lannister",
-//     class: "text",
-//     weapon: "text",
-//     specAbility: "text",
-//     imgUrl: "text"
-  
-// }
-
-// return newRecruit;
-
-
-// console.log("New Member:", newRecruit)
-
-// GoTclasses.push(newRecruit);
-
-// CardsOnDom(GoTclasses);
-
-// console.log(GoTclasses);
-
-
-
-
-
-
-
-
-
-
+console.log(specCardonDOM);
+console.log(arrStark);
 
 
 
@@ -546,58 +595,12 @@ const sortBtn = document.querySelector(".SortButton");
 sortBtn.addEventListener('click', createMember);
 
 
-
-//Selecting specific factions for filtering
-let arrLann = [];
-for (i = 0; i < GoTclasses.length; i++){
-  if (GoTclasses[i].faction === "Lannister"){
-    arrLann.push(GoTclasses[i]);
-  }
-};
-
-let arrTarg = [];
-for (i =0; i < GoTclasses.length; i++){
-  if(GoTclasses[i].faction === "Targaryen"){
-    arrTarg.push(GoTclasses[i]);
-  }
-};
-
-let arrBarath = [];
-for (i = 0; i < GoTclasses.length; i++){
-  if (GoTclasses[i].faction === "Baratheon"){
-    arrBarath.push(GoTclasses[i]);
-  }
-};
-
-let arrStark = [];
-for (i = 0; i < GoTclasses.length; i++){
-  if (GoTclasses[i].faction === "Stark"){
-    arrStark.push(GoTclasses[i]);
-  }
-};
-
-let arrGrey = [];
-for (i = 0; i < GoTclasses.length; i++){
-if (GoTclasses[i].faction === "Greyjoy"){
-  arrGrey.push(GoTclasses[i]);
-}
-};
-
-let arrHigh = [];
-for (i = 0; i < GoTclasses.length; i++){
-  if (GoTclasses[i].faction === "Hightower"){
-    arrHigh.push(GoTclasses[i]);
-  }
-}
-
 //Once button clicked, DOM shows that filtered array
 btn_L.addEventListener('click', () => {
-  console.log("Hello");
   CardsOnDom(arrLann);
 });
 
 btn_T.addEventListener("click", () => {
-  console.log("Targ");
   CardsOnDom(arrTarg);
 })
 
@@ -615,48 +618,5 @@ btn_H.addEventListener('click', () => {
   CardsOnDom(arrHigh);
 })
 btn_All.addEventListener('click', () => {
-  CardsOnDom(GoTclasses);
+  CardsOnDom(specCardonDOM);
 })
-
-
-
-
-
-
-
-
-
-
-
-//On startup, make div hidden to equal true But on click, set it to false.
-
-//Hide and Show div
-
-//Input Name
-
-//Randomizer comes first (Sort)
-
-//grabs user info and makes a new card
-
-// const name = document.querySelector("#Username");
-
-// const newMember() => {
-
-// name: name.value;
-// faction: ,
-// class: ,
-// weapon: ,
-// specAbility: ,
-// imgUrl: 
-// }
-
-
-
-
-
-
-//to move cards to another box, just render to Dom to that target class for that div box
-
-/* Don't show any cards from Array. 
-When user inputs, randomize through loop in array and give user random card that will display. Original array should NOT display on DOM.
-Only difference is the name will be different based on user input*/
