@@ -6,4 +6,4 @@ const showFilterBtns = () => {
       filtBtns[i].hidden = false;
     }};
 
-export WritableStreamDefaultWriter;t 
+export default showFilterBtns;

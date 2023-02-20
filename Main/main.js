@@ -1,63 +1,22 @@
 import CardsOnDom from "../utils/cardsOnDom.js";
 import GoTclasses from "../utils/data.js";
-
+import exiledCardsOnDom from "../utils/exiledCardsonDom.js";
+import hideFilterBtns from "../utils/hideFilterBtns.js";
+import hideInputBtns from "../utils/hideInputBtns.js";
+import renderToDom from "../utils/renderToDom.js";
+import sendToWall from "../utils/sendToWall.js";
+import showFilterBtns from "../utils/showFilterBtns.js";
+import showInputBtns from "../utils/showInputBtns.js";
+import createMember from "../utils/createMember.js";
   
-  const renderToDom = (selectId, renderToHtml) => {
-  const divId = document.querySelector(selectId);
-  divId.innerHTML = renderToHtml;
-  };
+GoTclasses
+exiledCardsOnDom();
+renderToDom();
 
 
-
-
-
-
-
-const exiledCardsOnDom = (wall) => {
-  let domString = "";
-  
-  for (const brick of wall) {
-    domString += 
-
-  `<div class="card" style="max-width: 33%;">
-  <img src="${brick.imgUrl}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">${brick.faction}</h5>
-    <p class="card-text"><b>Name</b>: ${brick.name}</p>
-    <p class="card-text"><b>Class</b>: ${brick.class}</p>
-    <p class="card-text"><b>Weapon</b>: ${brick.weapon}</p>
-    <p class="card-text"><b>Special Ability</b>: ${brick.specAbility}</p>
-  </div>
-  </div>`
-  };
-  
-  renderToDom('.container-2', domString);
-
-};
 
 theWall = [];
-
-const sendToWall = (event) => {
-if (event.target.id.includes("wallBtn")){
-  const [, personaId] = event.target.id.split("--");
-
-  console.log("Object id: " + personaId);
-
- 
- const personaIndex = specCardonDOM.findIndex((item) => Number(personaId) === item.id);
-  
-
-  const exiledPersona = specCardonDOM.splice(personaIndex, 1);
-  console.log(specCardonDOM.item);
-  theWall.push(exiledPersona);
-
- 
-  
-};
-exiledCardsOnDom(theWall);
-console.log(theWall);
-CardsOnDom(specCardonDOM);
-};
+sendToWall();
 
 
 
@@ -71,19 +30,11 @@ CardsOnDom(specCardonDOM);
   const stateName = document.querySelector(".StateYourName");
 
 
-   const hideInputBtns = () => {
-    sortButtons.hidden = true;
-    userInput.hidden = true;
-    stateName.hidden = true;
-   };
+   
  
-  hideInputBtns();
+hideInputBtns();
 
-  const showInputBtns = () => {
-    sortButtons.hidden = false;
-    userInput.hidden = false;
-    stateName.hidden = false;
-   };
+showInputBtns();
 
   
 
@@ -100,24 +51,10 @@ const btn_All = document.querySelector(".btn-all");
 
 //hide and show buttons
 
-const hideFilterBtns = () => {
-let filtBtns = [];
-filtBtns.push(btn_T, btn_S, btn_L, btn_H, btn_G, btn_B, btn_All);
-
-for (i in filtBtns){
-  filtBtns[i].hidden = true;
-}}; 
-
 hideFilterBtns();
 
+showFilterBtns();
 
-const showFilterBtns = () => {
-  let filtBtns = [];
-  filtBtns.push(btn_T, btn_S, btn_L, btn_H, btn_G, btn_B, btn_All);
-  
-  for (i in filtBtns){
-    filtBtns[i].hidden = false;
-  }};
 
 //show upon click
 const showBtn = document.querySelector(".Show");
@@ -135,54 +72,7 @@ let arrGrey = [];
 let arrHigh = [];
 
 
-const createMember = () => {
-
-const inputName = document.querySelector("#UserName")
-
-const randNum = Math.floor(Math.random() * 43);
-console.log(randNum);
-
-for (i = 0; i < GoTclasses.length; i++){
-if (randNum === Number(GoTclasses[i].id)){
-
-GoTclasses[i].name = inputName.value;
-
-console.log(GoTclasses[i]);
-
-specCardonDOM.push(GoTclasses[i]);
-console.log(specCardonDOM);
-
-
-
-
-CardsOnDom(specCardonDOM);
-
-if (GoTclasses[i].faction === "Stark") {
-  console.log("STARK FILTER");
-  arrStark.push(GoTclasses[i]);
-}
-if (GoTclasses[i].faction === "Lannister") {
-  console.log("Lannister FILTER");
-  arrLann.push(GoTclasses[i]);
-}
-if (GoTclasses[i].faction === "Targaryen") {
-  console.log("TARG FILTER");
-  arrTarg.push(GoTclasses[i]);
-}
-if (GoTclasses[i].faction === "Baratheon") {
-  console.log("BARATH FILTER");
-  arrBarath.push(GoTclasses[i]);
-}
-if (GoTclasses[i].faction === "Greyjoy") {
-  console.log("Greyjoy FILTER");
-  arrGrey.push(GoTclasses[i]);
-}
-if (GoTclasses[i].faction === "Hightower") {
-  console.log("HIGHTOWER FILTER");
-  arrHigh.push(GoTclasses[i]);
-}
-};
-}}; 
+createMember();
 
 console.log(specCardonDOM);
 console.log(arrStark);
